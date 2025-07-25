@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import css from './App.module.css';
-import CafeInfo from '../CafeInfo/CafeInfo';
-import VoteOptions from '../VoteOptions/VoteOptions';
-import VoteStats from '../VoteStats/VoteStats';
-import Notification from '../Notification/Notification.';
-import type { Votes, VoteType } from '../../types/votes';   // Додано ключове слово type
-
+import { useState } from "react";
+import css from "./App.module.css";
+import CafeInfo from "../CafeInfo/CafeInfo";
+import VoteOptions from "../VoteOptions/VoteOptions";
+import VoteStats from "../VoteStats/VoteStats";
+import Notification from "../Notification/Notification";
+import type { Votes, VoteType } from "../../types/votes"; // Додано ключове слово type
 
 export default function App() {
   const [votes, setVotes] = useState<Votes>({
@@ -15,7 +14,7 @@ export default function App() {
   });
 
   const handleVote = (type: VoteType) => {
-    setVotes(prev => ({
+    setVotes((prev) => ({
       ...prev,
       [type]: prev[type] + 1,
     }));
